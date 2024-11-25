@@ -1,0 +1,22 @@
+@media (max-width: 768px) {
+    section {
+        padding: 20px;
+    }
+
+    .gallery img {
+        max-width: 100%;
+    }
+
+    .video-container iframe {
+        height: 300px; 
+    }
+
+    nav {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    nav a {
+        margin: 10px 0; 
+    }
+}
