@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corinthians - Maior do Brasil</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Anton&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #fff;
+        }
+        header {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        header h1 {
+            font-family: 'Anton', sans-serif;
+            font-size: 3rem;
+            margin: 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #222;
+            padding: 10px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 50px 10%;
+            text-align: center;
+        }
+        section h2 {
+            color: #000;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        section p {
+            color: #333;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        .video-container iframe {
+            width: 100%;
+            max-width: 900px;
+            height: 500px;
+            border: none;
+        }
+        .gallery img {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+        footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Corinthians - O Maior do Brasil</h1>
+</header>
+
+<nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#videos">Vídeos</a>
+</nav>
+
+<section id="sobre">
+    <h2>O Corinthians</h2>
+    <p>O Sport Club Corinthians Paulista é um dos maiores clubes de futebol do Brasil, com uma história rica de conquistas e uma torcida apaixonada. Fundado em 1910, o clube tem sua sede em São Paulo e é conhecido por sua força e tradição.</p>
+    <img src="https://a.espncdn.com/i/teamlogos/soccer/500/874.png" alt="Logo Corinthians" style="max-width: 200px; margin-top: 20px;">
+</section>
+
+<section id="galeria">
+    <h2>Galeria de Imagens</h2>
+    <div class="gallery">
+        <img src="imagens/imagem1.jpg" alt="Imagem 1">
+        <img src="imagens/imagem2.jpg" alt="Imagem 2">
+        <img src="imagens/imagem3.jpg" alt="Imagem 3">
+    </div>
+</section>
+
+<section id="videos" class="video-container">
+    <h2>Assista aos Vídeos</h2>
+    <iframe src="https://www.youtube.com/embed/OJmY43QDhVo" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+
+<footer>
+    <p>&copy; 2024 Corinthians. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
