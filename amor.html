@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Fofa com Imagens</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #6e4b82, #9d4f91, #8f4d97); /* Gradiente mais escuro */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            color: white;
+        }
+
+        h1 {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 3em;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        h1:hover {
+            transform: scale(1.1);
+            color: #ffbbff;
+        }
+
+        .container {
+            text-align: center;,
+            '1'
+        }
+
+        .images-container {
+            display: none; /* Esconde as imagens inicialmente */
+            margin-top: 20px;
+        }
+
+        .image-item {
+            margin-bottom: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .image-item img {
+            width: 300px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
+            transition: transform 0.3s ease;
+        }
+
+        .image-item img:hover {
+            transform: scale(1.05); /* Zoom suave nas imagens */
+        }
+
+        p {
+            font-size: 1.5em;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            color: #fff;
+        }
+
+        #continueButton {
+            background-color: #b14d8e; /* Cor de fundo mais escura */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        #continueButton:hover {
+            background-color: #993369; /* Cor escura do botão ao passar o mouse */
+        }
+
+        #extraText {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.4em;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #fff;
+            text-align: center;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -500px 0;
+            }
+            100% {
+                background-position: 500px 0;
+            }
+        }
+
+        h1 {
+            background: linear-gradient(120deg, #d084c5, #9d4f91, #7d3580); /* Gradiente do título mais escuro */
+            background-size: 300%;
+            color: transparent;
+            background-clip: text;
+            animation: shimmer 1.5s linear infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Página 1: Exibição inicial -->
+        <div id="page1" class="page active">
+            <h1 onclick="showImages()">Bem-vinda gatinha feiaa!</h1>
+            <p>clica no título pra ver uma coisinha...</p>
+
+            <!-- Container para as imagens que será mostrado após o clique -->
+            <div class="images-container" id="imagesContainer">
+                <div class="image-item" onclick="showAlert('Imagem 1')">
+                    <img src="caminho_da_imagem1.jpg" alt="Imagem Fofa 1">
+                    <p>Esse dia eu me apaixonei mais por você, lembro de ver você bem bonita, quase brilhando. 1</p>
+                </div>
+                <div class="image-item" onclick="showAlert('Imagem 2')">
+                    <img src="caminho_da_imagem2.jpg" alt="Imagem Fofa 2">
+                    <p>A primeira vez que estive realmente com você, nesse dia eu estava me apaixonando com medo. 2</p>
+                </div>
+                <div class="image-item" onclick="showAlert('Imagem 3')">
+                    <img src="caminho_da_imagem3.jpg" alt="Imagem Fofa 3">
+                    <p>Eu amo você, gatinha, amor da minha vida. 3</p>
+                </div>
+            </div>
+
+            <!-- Botão para continuar e mostrar a página seguinte -->
+            <button id="continueButton" onclick="nextPage()">Continuar</button>
+        </div>
+
+        <!-- Página 2: Texto extra -->
+        <div id="page2" class="page">
+            <div id="extraText">
+                <p>Aqui vai um texto adicional que você pode personalizar com o que quiser! Isso pode ser uma carta, mensagem ou qualquer coisa que deseje compartilhar com a pessoa. O céu é o limite!</p>
+            </div>
+            <!-- Botão para voltar para a primeira página -->
+            <button id="backButton" onclick="previousPage()">Voltar</button>
+        </div>
+    </div>
+
+    <script>
+        function showImages() {
+            // Mostrar o container de imagens ao clicar no título
+            var container = document.getElementById('imagesContainer');
+            container.style.display = 'block'; // Exibe as imagens
+        }
+
+        function showAlert(imageName) {
+            // Exibe um alerta com o nome da imagem
+            alert("Você clicou na " + imageName);
+        }
+
+        function nextPage() {
+            // Mover para a próxima página e esconder o conteúdo da Página 1 (imagens e botão)
+            document.getElementById('page1').classList.remove('active');
+            document.getElementById('page2').classList.add('active');
+        }
+
+        function previousPage() {
+            // Voltar para a página 1
+            document.getElementById('page2').classList.remove('active');
+            document.getElementById('page1').classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
