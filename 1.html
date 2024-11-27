@@ -1,120 +1,198 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corinthians - Maior do Brasil</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Anton&display=swap" rel="stylesheet">
+    <title>para: Laurinha</title>
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #6e4b82, #9d4f91, #8f4d97); /* Gradiente mais escuro */
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #fff;
-        }
-        header {
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-        }
-        header h1 {
-            font-family: 'Anton', sans-serif;
-            font-size: 3rem;
-            margin: 0;
-        }
-        nav {
             display: flex;
             justify-content: center;
-            background-color: #222;
-            padding: 10px;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            color: white;
         }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        section {
-            padding: 50px 10%;
+
+        h1 {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 3em;
             text-align: center;
-        }
-        section h2 {
-            color: #000;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        section p {
-            color: #333;
-            font-size: 1.2rem;
-            line-height: 1.6;
-        }
-        .video-container iframe {
-            width: 100%;
-            max-width: 900px;
-            height: 500px;
-            border: none;
-        }
-        .gallery img {
-            width: 100%;
-            max-width: 300px;
-            margin: 10px;
+            padding: 20px;
             border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        h1:hover {
+            transform: scale(1.1);
+            color: #ffbbff;
+        }
+
+        .container {
+            text-align: center;,
+            '1'
+        }
+
+        .images-container {
+            display: none; /* Esconde as imagens inicialmente */
+            margin-top: 20px;
+        }
+
+        .image-item {
+            margin-bottom: 20px;
+            text-align: center;
             transition: transform 0.3s ease;
         }
-        .gallery img:hover {
-            transform: scale(1.1);
+
+        .image-item img {
+            width: 300px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.7);
+            transition: transform 0.3s ease;
         }
-        footer {
-            background-color: #222;
+
+        .image-item img:hover {
+            transform: scale(1.05); /* Zoom suave nas imagens */
+        }
+
+        p {
+            font-size: 1.5em;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            color: #fff;
+        }
+
+        #continueButton {
+            background-color: #b14d8e; /* Cor de fundo mais escura */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        #continueButton:hover {
+            background-color: #993369; /* Cor escura do botão ao passar o mouse */
+        }
+
+        #extraText {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.4em;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
             color: #fff;
             text-align: center;
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -500px 0;
+            }
+            100% {
+                background-position: 500px 0;
+            }
+        }
+
+        h1 {
+            background: linear-gradient(120deg, #d084c5, #9d4f91, #7d3580); /* Gradiente do título mais escuro */
+            background-size: 300%;
+            color: transparent;
+            background-clip: text;
+            animation: shimmer 1.5s linear infinite;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Corinthians - O Maior do Brasil</h1>
-</header>
+    <div class="container">
+        <!-- Página 1: Exibição inicial -->
+        <div id="page1" class="page active">
+            <h1 onclick="showImages()">Bem-vinda gatinha feiaa!</h1>
+            <p>clica no título pra ver uma coisinha... <br> aqui em baixo é depois. </p>
 
-<nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#galeria">Galeria</a>
-    <a href="#videos">Vídeos</a>
-</nav>
+            <!-- Container para as imagens que será mostrado após o clique -->
+            <div class="images-container" id="imagesContainer">
+                <div class="image-item" onclick="showAlert('EU TE AMOOO')">
+                    <img src="1.jpg" height="450" width="500" alt="Imagem Fofa 1">
+                    <p>lembro de ver vc bem gata, quase brilhando cacheadinha</p>
+                </div>
+                <div class="image-item" onclick="showAlert('OI, voce é linda')">
+                    <img src="2.jpg" height=400 width="770" alt="Imagem Fofa 2">
+                    <p>Nsse dia eu me apaixonei mais por você...</p>
+                </div>
+                <div class="image-item" onclick="showAlert('oi, oq vc ta olhando???')">
+                    <img src="4.jpg" height= "350" width="800" alt="Imagem Fofa 3">
+                    <p>Eu amo você, gatinha, amor da minha vida.</p>
+                </div>
+            </div>
 
-<section id="sobre">
-    <h2>O Corinthians</h2>
-    <p>O Sport Club Corinthians Paulista é um dos maiores clubes de futebol do Brasil, com uma história rica de conquistas e uma torcida apaixonada. Fundado em 1910, o clube tem sua sede em São Paulo e é conhecido por sua força e tradição.</p>
-    <img src="https://a.espncdn.com/i/teamlogos/soccer/500/874.png" alt="Logo Corinthians" style="max-width: 200px; margin-top: 20px;">
-</section>
+            <!-- Botão para continuar e mostrar a página seguinte -->
+            <button id="continueButton" onclick="nextPage()">Continuar</button>
+        </div>
 
-<section id="galeria">
-    <h2>Galeria de Imagens</h2>
-    <div class="gallery">
-        <img src="imagens/imagem1.jpg" alt="Imagem 1">
-        <img src="imagens/imagem2.jpg" alt="Imagem 2">
-        <img src="imagens/imagem3.jpg" alt="Imagem 3">
+        <!-- Página 2: Texto extra -->
+        <div id="page2" class="page">
+            <div id="extraText">
+                <p>OIII CACHEADINHA... <br>queria escrever esse texto ou melhor, criar esse site pra te dizer que te amo MUITO, <br> voce é surreal. <br> com toda certeza é a pessoa que sempre sonhei e agr estou com vc. <br>sei que nao é o melhor site do mundo mas fiz pensando em voce amor, <br>
+                confesso que deu um trabalinho fazer isso mas é so pra te dizer, <br> QUER CASAR CMG??? <br>eu te amo demais gatinha. </p>
+            </div>
+            <!-- Botão para voltar para a primeira página -->
+            <button id="backButton" onclick="previousPage()">Voltar</button>
+        </div>
     </div>
-</section>
 
-<section id="videos" class="video-container">
-    <h2>Assista aos Vídeos</h2>
-    <iframe src="https://www.youtube.com/embed/OJmY43QDhVo" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</section>
+    <script>
+        function showImages() {
+            // Mostrar o container de imagens ao clicar no título
+            var container = document.getElementById('imagesContainer');
+            container.style.display = 'block'; // Exibe as imagens
+        }
 
-<footer>
-    <p>&copy; 2024 Corinthians. Todos os direitos reservados.</p>
-</footer>
+        function showAlert(imageName) {
+            // Exibe um alerta com o nome da imagem
+            alert("vc clicou nas minhas fotos preferidas amor         " + imageName);
+        }
+
+        function nextPage() {
+            // Mover para a próxima página e esconder o conteúdo da Página 1 (imagens e botão)
+            document.getElementById('page1').classList.remove('active');
+            document.getElementById('page2').classList.add('active');
+        }
+
+        function previousPage() {
+            // Voltar para a página 1
+            document.getElementById('page2').classList.remove('active');
+            document.getElementById('page1').classList.add('active');
+        }
+
+        function nextPage() {
+    // Mover para a próxima página e esconder o conteúdo da Página 1 (imagens e botão)
+    document.getElementById('page1').classList.remove('active');
+    document.getElementById('page2').classList.add('active');
+    
+    // Exibir o texto extra na página 2
+    document.getElementById('extraText').style.display = 'block';
+}
+
+    </script>
 
 </body>
 </html>
