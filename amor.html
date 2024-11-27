@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Fofa com Imagens</title>
+    <title>para: Laurinha</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -126,21 +126,21 @@
         <!-- Página 1: Exibição inicial -->
         <div id="page1" class="page active">
             <h1 onclick="showImages()">Bem-vinda gatinha feiaa!</h1>
-            <p>clica no título pra ver uma coisinha...</p>
+            <p>clica no título pra ver uma coisinha... <br> aqui em baixo é depois. </p>
 
             <!-- Container para as imagens que será mostrado após o clique -->
             <div class="images-container" id="imagesContainer">
-                <div class="image-item" onclick="showAlert('Imagem 1')">
-                    <img src="caminho_da_imagem1.jpg" alt="Imagem Fofa 1">
-                    <p>Esse dia eu me apaixonei mais por você, lembro de ver você bem bonita, quase brilhando. 1</p>
+                <div class="image-item" onclick="showAlert('EU TE AMOOO')">
+                    <img src="1.jpg" height="450" width="500" alt="Imagem Fofa 1">
+                    <p>lembro de ver vc bem gata, quase brilhando cacheadinha</p>
                 </div>
-                <div class="image-item" onclick="showAlert('Imagem 2')">
-                    <img src="caminho_da_imagem2.jpg" alt="Imagem Fofa 2">
-                    <p>A primeira vez que estive realmente com você, nesse dia eu estava me apaixonando com medo. 2</p>
+                <div class="image-item" onclick="showAlert('OI, voce é linda')">
+                    <img src="2.jpg" height=400 width="770" alt="Imagem Fofa 2">
+                    <p>Nsse dia eu me apaixonei mais por você...</p>
                 </div>
-                <div class="image-item" onclick="showAlert('Imagem 3')">
-                    <img src="caminho_da_imagem3.jpg" alt="Imagem Fofa 3">
-                    <p>Eu amo você, gatinha, amor da minha vida. 3</p>
+                <div class="image-item" onclick="showAlert('oi, oq vc ta olhando???')">
+                    <img src="4.jpg" height= "350" width="800" alt="Imagem Fofa 3">
+                    <p>Eu amo você, gatinha, amor da minha vida.</p>
                 </div>
             </div>
 
@@ -151,7 +151,8 @@
         <!-- Página 2: Texto extra -->
         <div id="page2" class="page">
             <div id="extraText">
-                <p>Aqui vai um texto adicional que você pode personalizar com o que quiser! Isso pode ser uma carta, mensagem ou qualquer coisa que deseje compartilhar com a pessoa. O céu é o limite!</p>
+                <p>OIII CACHEADINHA... <br>queria escrever esse texto ou melhor, criar esse site pra te dizer que te amo MUITO, <br> voce é surreal. <br> com toda certeza é a pessoa que sempre sonhei e agr estou com vc. <br>sei que nao é o melhor site do mundo mas fiz pensando em voce amor, <br>
+                confesso que deu um trabalinho fazer isso mas é so pra te dizer, <br> QUER CASAR CMG??? <br>eu te amo demais gatinha. </p>
             </div>
             <!-- Botão para voltar para a primeira página -->
             <button id="backButton" onclick="previousPage()">Voltar</button>
@@ -167,7 +168,7 @@
 
         function showAlert(imageName) {
             // Exibe um alerta com o nome da imagem
-            alert("Você clicou na " + imageName);
+            alert("vc clicou nas minhas fotos preferidas amor         " + imageName);
         }
 
         function nextPage() {
@@ -181,6 +182,16 @@
             document.getElementById('page2').classList.remove('active');
             document.getElementById('page1').classList.add('active');
         }
+
+        function nextPage() {
+    // Mover para a próxima página e esconder o conteúdo da Página 1 (imagens e botão)
+    document.getElementById('page1').classList.remove('active');
+    document.getElementById('page2').classList.add('active');
+    
+    // Exibir o texto extra na página 2
+    document.getElementById('extraText').style.display = 'block';
+}
+
     </script>
 
 </body>
