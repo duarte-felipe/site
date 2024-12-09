@@ -36,8 +36,7 @@
         }
 
         .container {
-            text-align: center;,
-            '1'
+            text-align: center;
         }
 
         .images-container {
@@ -96,7 +95,7 @@
 
         .page {
             display: none;
-        } 
+        }
 
         .active {
             display: block;
@@ -135,17 +134,26 @@
                     <p>lembro de ver vc bem gata, quase brilhando cacheadinha</p>
                 </div>
                 <div class="image-item" onclick="showAlert('OI, voce é linda')">
-                    <img src="2.jpg" height=400 width="770" alt="Imagem Fofa 2">
+                    <img src="2.jpg" height="400" width="770" alt="Imagem Fofa 2">
                     <p>Nsse dia eu me apaixonei mais por você...</p>
                 </div>
                 <div class="image-item" onclick="showAlert('oi, oq vc ta olhando???')">
-                    <img src="4.jpg" height= "350" width="800" alt="Imagem Fofa 3">
+                    <img src="4.jpg" height="350" width="800" alt="Imagem Fofa 3">
                     <p>Eu amo você, gatinha, amor da minha vida.</p>
                 </div>
             </div>
 
             <!-- Botão para continuar e mostrar a página seguinte -->
             <button id="continueButton" onclick="nextPage()">Continuar</button>
+
+            <!-- Botão para carregar outro HTML -->
+            <button id="loadHTMLButton" onclick="loadExternalHTML()">Continuar pt2</button>
+            
+            <!-- Local onde o HTML externo será carregado -->
+            <div id="externalHTMLContainer">
+                <!-- O conteúdo HTML será carregado aqui -->
+            </div>
+
         </div>
 
         <!-- Página 2: Texto extra -->
@@ -172,7 +180,7 @@
         }
 
         function nextPage() {
-            // Mover para a próxima página e esconder o conteúdo da Página 1 (imagens e botão)
+            //  a próxima página e esconder o conteúdo da Página 1 (imagens e botão)
             document.getElementById('page1').classList.remove('active');
             document.getElementById('page2').classList.add('active');
         }
@@ -183,15 +191,15 @@
             document.getElementById('page1').classList.add('active');
         }
 
-        function nextPage() {
-    // Mover para a próxima página e esconder o conteúdo da Página 1 (imagens e botão)
-    document.getElementById('page1').classList.remove('active');
-    document.getElementById('page2').classList.add('active');
-    
-    // Exibir o texto extra na página 2
-    document.getElementById('extraText').style.display = 'block';
-}
-
+        function loadExternalHTML() {
+            // Aqui você insere o caminho correto do seu arquivo HTML
+            var iframe = document.createElement('iframe');
+            iframe.src = 'flower.html'; // Substitua 'caminho/para/seu/arquivo.html' pelo caminho real do seu arquivo
+            iframe.width = "100%";
+            iframe.height = "500px"; // Ajuste a altura conforme necessário
+            iframe.frameBorder = "0"; // Remover borda
+            document.getElementById('externalHTMLContainer').appendChild(iframe);
+        }
     </script>
 
 </body>
